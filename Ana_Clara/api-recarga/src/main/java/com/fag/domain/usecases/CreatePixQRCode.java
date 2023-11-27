@@ -16,9 +16,9 @@ public class CreatePixQRCode {
   }
 
   public PixDTO execute(PixDTO dto) {
-    PixBO bo = PixMapper.toBO(dto);
-
     PixDTO response = vendor.create(dto);
+    
+     PixBO bo = PixMapper.toBO(response);
 
     repository.persist(bo);
 
